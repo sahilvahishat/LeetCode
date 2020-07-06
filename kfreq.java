@@ -25,23 +25,18 @@ public class kfreq {
             }
         });
 
-        for (Map.Entry<String, Integer> entry : myMap.entrySet()) { // [a,b ,c, d]
-            pq.add(entry.getKey()); // insert
-            if (pq.size() > k) // remove first element
+        for (Map.Entry<String, Integer> entry : myMap.entrySet()) {
+            pq.add(entry.getKey());
+            if (pq.size() > k)
                 pq.poll();
 
         }
-        System.out.println(pq);
-
         List<String> result = new ArrayList<String>();
         while (!pq.isEmpty()) {
             result.add(pq.poll());
         }
 
         Collections.reverse(result);
-
-        System.out.println(result);
-
         return result;
     }
 }
